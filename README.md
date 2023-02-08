@@ -1,4 +1,19 @@
-# terraform-vpc
+Terraform installation: 
+
+apt update
+
+wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip
+
+apt install unzip
+
+unzip terraform_0.14.7_linux_amd64.zip
+
+mv terraform /usr/local/bin/
+
+terraform -v
+
+
+
 
 ubuntu Jenkins installation
 
@@ -38,13 +53,3 @@ sudo yum install jenkins -y
 sudo systemctl enable jenkins
 
 sudo systemctl start jenkins
-
-Terraform installation: sudo apt update
-
-sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com focal main"
-
-curl https://apt.releases.hashicorp.com/gpg | gpg --dearmor > hashicorp.gpg sudo install -o root -g root -m 644 hashicorp.gpg /etc/apt/trusted.gpg.d/
-
-sudo apt update
-
-sudo apt install terraform
