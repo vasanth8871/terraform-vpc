@@ -1,35 +1,16 @@
 ###############################################################################
-# bastion
+# appserver
 ###############################################################################
 
-resource "aws_instance" "bastion" {
-
-  ami                          =  var.ami
-  instance_type                =  var.type
-  subnet_id                    =  aws_subnet.public2.id
-  vpc_security_group_ids       =  [ aws_security_group.bastion.id]
-  key_name                     =  aws_key_pair.key.id
-  tags = {
-    Name = "${var.project}-bastion"
-    Project = var.project
-  }
-
-}
-
-
-###############################################################################
-# webserver
-###############################################################################
-
-resource "aws_instance" "webserver" {
+resource "aws_instance" "appserver" {
 
   ami                          =  var.ami
   instance_type                =  var.type
   subnet_id                    =  aws_subnet.public1.id
-  vpc_security_group_ids       =  [ aws_security_group.webserver.id]
+  vpc_security_group_ids       =  [ aws_security_group.appserver.id]
   key_name                     =  aws_key_pair.key.id
   tags = {
-    Name = "${var.project}-webserver"
+    Name = "${var.project}-appserver"
     Project = var.project
   }
   
