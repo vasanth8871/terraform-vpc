@@ -6,7 +6,7 @@ resource "aws_instance" "bastion" {
 
   ami                          =  var.ami
   instance_type                =  var.type
-  subnet_id                    =  aws_subnet.public2.id
+  subnet_id                    =  aws_subnet.public1.id
   vpc_security_group_ids       =  [ aws_security_group.bastion.id]
   key_name                     =  aws_key_pair.key.id
   tags = {
