@@ -15,7 +15,7 @@ variable "vpc_cidr" {
 }
 
 variable "vpc_subnets" {
-  default = "3"
+  default = "1"
 }
 
 variable "type" {
@@ -25,5 +25,5 @@ variable "type" {
 
 variable "ami" {
   description = "amazon linux 2 ami"
-  default = "ami-00874d747dde814fa"
+  default = "ami-053b0d53c279acc90"
 }
