@@ -2,14 +2,6 @@ variable "project" {
   default = "test"
 }
 
-variable "access_key"{
-  default = " "           #==========> provide the access_key of the IAM user
-}
-
-variable "secret_key"{
-  default = " "          #==========> provide the secret_key of the IAM user
-}
-
 variable "vpc_cidr" {
   default = "172.16.0.0/16"
 }
