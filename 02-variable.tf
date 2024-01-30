@@ -19,3 +19,7 @@ variable "ami" {
   description = "amazon linux 2 ami"
   default = "ami-053b0d53c279acc90"
 }
+variable "key" {
+  description = " key_name"
+  default = "dockerkey"
+}
