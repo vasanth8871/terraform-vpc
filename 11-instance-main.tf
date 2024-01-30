@@ -8,7 +8,7 @@ resource "aws_instance" "bastion" {
   instance_type                =  var.type
   subnet_id                    =  aws_subnet.public1.id
   vpc_security_group_ids       =  [ aws_security_group.bastion.id]
-  key_name                     =  aws_key_pair.key.id
+  key_name                     =  var.key
   tags = {
     Name = "${var.project}-bastion"
     Project = var.project
@@ -27,7 +27,7 @@ resource "aws_instance" "webserver" {
   instance_type                =  var.type
   subnet_id                    =  aws_subnet.public1.id
   vpc_security_group_ids       =  [ aws_security_group.webserver.id]
-  key_name                     =  aws_key_pair.key.id
+  key_name                     =  var.key
   tags = {
     Name = "${var.project}-webserver"
     Project = var.project
@@ -45,7 +45,7 @@ resource "aws_instance" "database" {
   instance_type                =  var.type
   subnet_id                    =  aws_subnet.private1.id
   vpc_security_group_ids       =  [ aws_security_group.database.id]
-  key_name                     =  aws_key_pair.key.id
+  key_name                     =  var.key
   tags = {
     Name = "${var.project}-database"
     Project = var.project
